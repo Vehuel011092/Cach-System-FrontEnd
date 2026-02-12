@@ -1,5 +1,12 @@
-<button ngMenuTrigger #origin #trigger="ngMenuTrigger" [menu]="formatMenu()">
-  Abrir Menú
+<button
+  ngMenuTrigger
+  #origin
+  #trigger="ngMenuTrigger"
+  [menu]="formatMenu()"
+  class="menu-trigger-button"
+>
+  <span>Oferta</span>
+  <span class="icon material-symbols-outlined arrow-icon" aria-hidden="true">expand_more</span>
 </button>
 
 <ng-template
@@ -7,7 +14,13 @@
   [cdkConnectedOverlay]="{origin, usePopover: 'inline'}"
   [cdkConnectedOverlayPositions]="[
     {originX: 'start', originY: 'bottom', overlayX: 'start', overlayY: 'top', offsetY: 4},
+    {originX: 'start', originY: 'top', overlayX: 'start', overlayY: 'bottom', offsetY: -4},
+    {originX: 'end', originY: 'bottom', overlayX: 'end', overlayY: 'top', offsetY: 4},
+    {originX: 'end', originY: 'top', overlayX: 'end', overlayY: 'bottom', offsetY: -4},
+    {originX: 'center', originY: 'bottom', overlayX: 'center', overlayY: 'top', offsetY: 4}
   ]"
+   [cdkConnectedOverlayViewportMargin]="8"
+   [cdkConnectedOverlayPush]="true"
   cdkAttachPopoverAsChild
 >
   <div ngMenu class="menu-container" #mainMenu="ngMenu">
@@ -75,7 +88,7 @@
 
         <!-- Panel Oscuro -->
         <div class="info-panel">
-          <h2 class="panel-title">Educación<br>trilingüe e integral</h2>
+          <h2 class="panel-title" style="color: white;">Educación<br>trilingüe e integral</h2>
           <p class="panel-subtitle">Líderes con visión y valores.</p>
           <button class="panel-button">Admisiones <span class="arrow">→</span></button>
         </div>

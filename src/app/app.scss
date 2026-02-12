@@ -40,17 +40,6 @@ h2 {
   border-width: 2px;
 }
 
-/* Cards y secciones */
-.card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-radius: 1rem;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.08) !important;
-}
-
 .bg-light {
   background-color: #f8f9fa !important;
 }
@@ -234,9 +223,107 @@ img, .bg-light, .card, .container {
   box-sizing: border-box;
 }
 
-/* Pequeñas mejoras de interacción */
-.hover-light:hover {
-  background-color: rgba(0,0,0,0.03);
-  text-decoration: none;
+
+/* ===== EFECTO HOVER PARA TARJETAS (SOLO CONTENEDOR) ===== */
+.card {
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), 
+              box-shadow 0.3s ease, 
+              border-color 0.2s ease !important;
+  position: relative;
+  border: 1px solid transparent !important;
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 25px -8px rgba(0, 0, 0, 0.15) !important;
+    border-color: rgba(13, 110, 253, 0.2) !important;
+    background-color: white !important;
+  }
 }
 
+/* ===== EFECTO HOVER PARA ETAPAS EDUCATIVAS (TRES COLUMNAS) ===== */
+.row.g-4 > .col-md-4 > [class*="p-4"].bg-light.rounded-4,
+.row.g-4 > .col-md-4 > [class*="p-4"].bg-white.rounded-4 {
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), 
+              box-shadow 0.3s ease, 
+              border-color 0.2s ease !important;
+  position: relative;
+  border: 1px solid transparent !important;
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 25px -8px rgba(0, 0, 0, 0.15) !important;
+    border-color: rgba(13, 110, 253, 0.2) !important;
+    background-color: white !important;
+  }
+}
+
+/* Ajuste específico para las tarjetas de etapas que tienen bg-light */
+.row.g-4 > .col-md-4 > .bg-light.rounded-4:hover {
+  background-color: white !important; /* Fondo blanco al hacer hover */
+}
+
+/* Ajuste específico para las mini cards (ya son bg-white, no cambian fondo) */
+.row.g-4 > .col-md-4 > .bg-white.rounded-4:hover {
+  background-color: white !important; /* Se mantiene blanco, pero forzamos por consistencia */
+}
+
+/* ===== ICONO DE CICLO MINIMALISTA ===== */
+.icon-cycle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .material-symbols-outlined {
+    font-size: 1.5em;      /* Mismo tamaño que el display-4 */
+    color: #DE2F31;        /* Azul Bootstrap suave */
+    animation: rotate 20s infinite linear;  /* Giro muy lento y constante */
+    opacity: 0.9;
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* ===== ICONO DE USUARIO MINIMALISTA ===== */
+.icon-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .material-symbols-outlined {
+    font-size: 1.5em;      /* Igual que el display-4 */
+    color: #DE2F31;        /* Azul Bootstrap coherente */
+    opacity: 0.9;
+  }
+}
+
+/* ===== ESTRELLA DE 4 PUNTAS (estilizada) ===== */
+.icon-four-star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .material-symbols-outlined {
+    font-size: 1.5em;
+    color: #DE2F31;
+    transform: rotate(0deg);  /* El rombo girado simula una estrella de 4 puntas */
+    opacity: 0.9;
+  }
+}
+
+.icon-comment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .material-symbols-outlined {
+    font-size: 1.5em;
+    color: #DE2F31;
+    transform: rotate(0deg);  /* El rombo girado simula una estrella de 4 puntas */
+    opacity: 0.9;
+  }
+}
