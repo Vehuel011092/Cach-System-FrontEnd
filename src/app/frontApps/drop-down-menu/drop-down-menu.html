@@ -1,0 +1,85 @@
+<button ngMenuTrigger #origin #trigger="ngMenuTrigger" [menu]="formatMenu()">
+  Abrir Menú
+</button>
+
+<ng-template
+  [cdkConnectedOverlayOpen]="trigger.expanded()"
+  [cdkConnectedOverlay]="{origin, usePopover: 'inline'}"
+  [cdkConnectedOverlayPositions]="[
+    {originX: 'start', originY: 'bottom', overlayX: 'start', overlayY: 'top', offsetY: 4},
+  ]"
+  cdkAttachPopoverAsChild
+>
+  <div ngMenu class="menu-container" #mainMenu="ngMenu">
+    <ng-template ngMenuContent>
+      <div class="menu-wrapper">
+        <!-- Columna 1: ESCUELA PARA NIÑOS -->
+        <div class="column">
+          <h3 class="column-title">ESCUELA PARA NIÑOS</h3>
+          <button ngMenuItem value="Maternal" class="menu-link">
+            <span class="icon material-symbols-outlined">folder</span>
+            <span class="label">Maternal</span>
+            <span class="description">A partir de los 18 meses</span>
+          </button>
+          <button ngMenuItem value="Preescolar" class="menu-link">
+            <span class="icon material-symbols-outlined">folder</span>
+            <span class="label">Preescolar</span>
+            <span class="description">A partir de los 3 años</span>
+          </button>
+          <button ngMenuItem value="Primaria" class="menu-link">
+            <span class="icon material-symbols-outlined">folder</span>
+            <span class="label">Primaria</span>
+            <span class="description">Español, inglés y alemán.</span>
+          </button>
+        </div>
+
+        <!-- Columna 2: ESCUELA PARA JÓVENES -->
+        <div class="column">
+          <h3 class="column-title">ESCUELA PARA JÓVENES</h3>
+          <button ngMenuItem value="Secundaria" class="menu-link">
+            <span class="icon material-symbols-outlined">folder</span>
+            <span class="label">Secundaria</span>
+            <span class="description">Pensamiento crítico y valores.</span>
+          </button>
+          <button ngMenuItem value="Preparatoria" class="menu-link">
+            <span class="icon material-symbols-outlined">folder</span>
+            <span class="label">Preparatoria</span>
+            <span class="description">Experiencia internacional.</span>
+          </button>
+          <button ngMenuItem value="Educación Continua" class="menu-link">
+            <span class="icon material-symbols-outlined">folder</span>
+            <span class="label">Educación Continua</span>
+            <span class="description">Expande tus conocimientos</span>
+          </button>
+        </div>
+
+        <!-- Columna 3: DEPARTAMENTO DE LENGUAS -->
+        <div class="column" style="display: flex; flex-direction: column;">
+          <h3 class="column-title">DEPARTAMENTO DE LENGUAS</h3>
+          <button ngMenuItem value="Certificación Inglés" class="menu-link" style="display: flex;">
+            <span class="icon material-symbols-outlined">folder</span>
+            <span class="label">Certificación Inglés</span>
+            <span class="description">Oxford TCC</span>
+          </button>
+          <button ngMenuItem value="Certificación Alemán" class="menu-link" style="display: flex;">
+            <span class="icon material-symbols-outlined">folder</span>
+            <span class="label">Certificación Alemán</span>
+            <span class="description">Goethe Institut</span>
+          </button>
+          <button ngMenuItem value="Certificación Español" class="menu-link" style="display: flex;">
+            <span class="icon material-symbols-outlined">folder</span>
+            <span class="label">Certificación Español</span>
+            <span class="description">Instituto Cervantes</span>
+          </button>
+        </div>
+
+        <!-- Panel Oscuro -->
+        <div class="info-panel">
+          <h2 class="panel-title">Educación<br>trilingüe e integral</h2>
+          <p class="panel-subtitle">Líderes con visión y valores.</p>
+          <button class="panel-button">Admisiones <span class="arrow">→</span></button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</ng-template>

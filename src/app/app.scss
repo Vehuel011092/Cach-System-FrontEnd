@@ -1,0 +1,242 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: white; /* o el color que uses */
+}
+
+:root {
+  --primary: #0d6efd; /* Azul Bootstrap, similar al del sitio */
+  --secondary: #6c757d;
+  --light-bg: #f8f9fa;
+}
+
+/* Hero section */
+.hero-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+/* Estilo para títulos */
+h1, h2, h3, h4, h5, h6 {
+  color: #212529;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+}
+
+.btn-outline-primary {
+  border-width: 2px;
+}
+
+/* Cards y secciones */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.08) !important;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+/* Badges */
+.badge {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 2rem;
+}
+
+/* Accordion personalizado */
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+  box-shadow: none;
+  color: #0d6efd;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0,0,0,0.125);
+}
+
+/* Footer */
+footer a:hover {
+  color: white !important;
+  text-decoration: underline !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* ===== ANIMACIONES DE ENTRADA (SLIDE-DOWN) ===== */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplicamos la animación a los contenedores principales */
+.navbar,
+.hero-section,
+section,
+footer {
+  animation: slideDown 0.7s ease-out forwards;
+  opacity: 0; /* Estado inicial invisible, la animación lo dejará en 1 */
+}
+
+/* Retrasos en cascada para un efecto progresivo */
+.navbar {
+  animation-delay: 0.1s;
+}
+.hero-section {
+  animation-delay: 0.2s;
+}
+section:nth-of-type(1) {
+  animation-delay: 0.3s;
+}
+section:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+section:nth-of-type(3) {
+  animation-delay: 0.5s;
+}
+section:nth-of-type(4) {
+  animation-delay: 0.6s;
+}
+section:nth-of-type(5) {
+  animation-delay: 0.7s;
+}
+footer {
+  animation-delay: 0.8s;
+}
+
+/* Opcional: las cards también pueden animarse individualmente para un efecto más granular */
+.card {
+  animation: slideDown 0.5s ease-out forwards;
+  opacity: 0;
+}
+/* Retraso escalonado para las cards */
+.card:nth-child(1) { animation-delay: 0.4s; }
+.card:nth-child(2) { animation-delay: 0.5s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.7s; }
+
+/* También las preguntas del FAQ */
+.accordion-item {
+  animation: slideDown 0.5s ease-out forwards;
+  opacity: 0;
+}
+.accordion-item:nth-child(1) { animation-delay: 0.7s; }
+.accordion-item:nth-child(2) { animation-delay: 0.8s; }
+.accordion-item:nth-child(3) { animation-delay: 0.9s; }
+.accordion-item:nth-child(4) { animation-delay: 1.0s; }
+
+/* Evita scroll horizontal inesperado */
+html, body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Imágenes del logo fluidas */
+.cachIcon img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Forzar comportamiento responsive en pantallas pequeñas */
+@media (max-width: 991.98px) {
+  /* Coloca el "mega menu" dentro del flujo para que sea visible en mobile */
+  .navbar .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: .5rem 0;
+    box-shadow: none !important;
+    border-radius: 8px;
+    padding: 1rem !important;
+  }
+
+  /* Si se usan overlays de Angular CDK, evitar que queden fuera de pantalla */
+  .cdk-overlay-container,
+  .cdk-overlay-pane,
+  [cdkConnectedOverlay] {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+  }
+
+  /* Asegura que el botón del nav se muestre en bloque y el texto alineado */
+  .navbar .nav-item .nav-link,
+  .navbar .nav-item > button.nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding-left: 0;
+  }
+
+  /* Ajustes para el collapse del navbar */
+  .navbar .collapse.show {
+    background: #fff;
+    padding: .75rem 1rem;
+    border-radius: .5rem;
+  }
+
+  /* Ajustes visuales del hero y tarjetas para móviles */
+  .hero-section .display-4 { font-size: 2rem; }
+  .hero-section .lead { font-size: 1rem; }
+  .card .display-4 { font-size: 2rem; }
+
+  /* Reducir espaciamiento en columnas para móviles */
+  .row.g-4 { gap: 1rem; }
+}
+
+/* Mejor experiencia en tablets (intermediate) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar .dropdown-menu {
+    width: 720px;
+  }
+}
+
+/* Evita que elementos anchos rompan el layout */
+img, .bg-light, .card, .container {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Pequeñas mejoras de interacción */
+.hover-light:hover {
+  background-color: rgba(0,0,0,0.03);
+  text-decoration: none;
+}
+
