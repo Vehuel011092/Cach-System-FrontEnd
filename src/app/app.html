@@ -25,13 +25,19 @@
         <li class="nav-item"><a class="nav-link" href="#" (click)="reload()">Modelos</a></li>
         <li class="nav-item"><a class="nav-link" href="#" (click)="reload()">Contacto</a></li>
         <li class="nav-item ms-lg-3">
+          <a class="btn btn-custom btn-lg me-3" (click)="reload()"> Admisiones </a>
+
           <a
-            class="btn rounded-pill px-4"
-            href="#"
-            (click)="reload()"
-            style="background-color: #de2f31; color: white; border: none"
-            >Admisiones</a
+            class="btn btn-custom rounded-3 btn-lg"
+            href="https://api.whatsapp.com/send/?phone=526642228729&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
           >
+            <span class="icon me-1">
+              <img src="assets/icons/whatsAppIcon.png" width="28" height="28" alt="WhatsApp" />
+            </span>
+            WhatsApp
+          </a>
         </li>
       </ul>
     </div>

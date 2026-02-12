@@ -10,20 +10,14 @@
 </button>
 
 <ng-template
-  [cdkConnectedOverlayOpen]="trigger.expanded()"
+   [cdkConnectedOverlayOpen]="trigger.expanded()"
   [cdkConnectedOverlay]="{origin, usePopover: 'inline'}"
-  [cdkConnectedOverlayPositions]="[
-    {originX: 'start', originY: 'bottom', overlayX: 'start', overlayY: 'top', offsetY: 4},
-    {originX: 'start', originY: 'top', overlayX: 'start', overlayY: 'bottom', offsetY: -4},
-    {originX: 'end', originY: 'bottom', overlayX: 'end', overlayY: 'top', offsetY: 4},
-    {originX: 'end', originY: 'top', overlayX: 'end', overlayY: 'bottom', offsetY: -4},
-    {originX: 'center', originY: 'bottom', overlayX: 'center', overlayY: 'top', offsetY: 4}
-  ]"
-   [cdkConnectedOverlayViewportMargin]="8"
-   [cdkConnectedOverlayPush]="true"
+  [cdkConnectedOverlayPositions]="overlayPositions"
+  [cdkConnectedOverlayViewportMargin]="isMobile() ? 12 : 8"
+  [cdkConnectedOverlayPush]="true"
   cdkAttachPopoverAsChild
 >
-  <div ngMenu class="menu-container" #mainMenu="ngMenu">
+  <div ngMenu class="menu-container" #mainMenu="ngMenu" [class.menu-mobile]="isMobile()">
     <ng-template ngMenuContent>
       <div class="menu-wrapper">
         <!-- Columna 1: ESCUELA PARA NIÑOS -->

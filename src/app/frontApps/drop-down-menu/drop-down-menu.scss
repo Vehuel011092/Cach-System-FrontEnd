@@ -273,36 +273,27 @@ body {
   transform: translateX(4px);
 }
 
-/* ===== RESPONSIVO ===== */
-@media (max-width: 768px) {
-  .menu-container {
-    width: 100vw;
-    max-width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    border-radius: 0;
-  }
 
-  .menu-wrapper {
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
 
-  .column {
-    border-right: 1px solid #f0f0f0;
-    border-bottom: none;
-    padding: 16px 16px;
-    flex: 0 0 auto;
-    min-width: 250px;
-  }
+/* ===== MENÚ EN MÓVIL: ANCHO COMPLETO Y CENTRADO ===== */
+.menu-mobile {
+  width: calc(100vw - 24px) !important; /* Ocupa casi toda la pantalla */
+  max-width: 400px !important;          /* Límite para tablets pequeñas */
+  min-width: 280px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin-top: 8px;
+  
+  /* Si el menú es muy largo, scroll interno */
+  max-height: min(400px, 70vh) !important;
+  overflow-y: auto !important;
+}
 
-  .column:last-of-type {
-    border-right: none;
-  }
-
-  .info-panel {
-    border-radius: 0;
-    min-width: 250px;
-    flex: 0 0 auto;
+/* Ajuste para que el overlay panel se centre correctamente */
+.cdk-overlay-pane {
+  &.menu-mobile-panel {
+    max-width: 95vw !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
 }
