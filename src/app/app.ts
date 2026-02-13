@@ -4,6 +4,7 @@ import { DropDownMenu } from "./frontApps/drop-down-menu/drop-down-menu";
 import { FooterPage } from "./frontApps/footer-page/footer-page";
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs/operators';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +15,9 @@ import { map } from 'rxjs/operators';
 export class App {
   protected readonly title = signal('Cach-System-FrontEnd');
   private router = inject(Router);
+  constructor(private viewportScroller: ViewportScroller) {}
 
    isScrolled = false; // Controla si se ha hecho scroll
-  constructor() { }
 
     // Detecta si la ruta actual NO es la landing page (ruta raíz)
   isNotLanding = toSignal(
@@ -37,6 +38,7 @@ export class App {
   }
 
   scrollToTop() {
+    this.viewportScroller.scrollToPosition([0, 0]);
     this.router.navigate(['/landing-page']);
   }
 
