@@ -1,71 +1,4 @@
 @use 'sass:color';
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: white; /* o el color que uses */
-}
-
-:root {
-  --primary: #0d6efd; /* Azul Bootstrap, similar al del sitio */
-  --secondary: #6c757d;
-  --light-bg: #f8f9fa;
-}
-
-/* Hero section */
-.hero-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-}
-
-/* Estilo para títulos */
-h1, h2, h3, h4, h5, h6 {
-  color: #212529;
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-/* Botones */
-.btn-primary {
-  background-color: #0d6efd;
-  border: none;
-  padding: 0.75rem 2rem;
-  font-weight: 500;
-}
-
-.btn-outline-primary {
-  border-width: 2px;
-}
-
-.bg-light {
-  background-color: #f8f9fa !important;
-}
-
-/* Badges */
-.badge {
-  padding: 0.5rem 1rem;
-  font-weight: 500;
-  border-radius: 2rem;
-}
-
-/* Accordion personalizado */
-.accordion-button:not(.collapsed) {
-  background-color: transparent;
-  box-shadow: none;
-  color: #0d6efd;
-}
-
-.accordion-button:focus {
-  box-shadow: none;
-  border-color: rgba(0,0,0,0.125);
-}
-
-/* Footer */
-footer a:hover {
-  color: white !important;
-  text-decoration: underline !important;
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -90,10 +23,7 @@ footer a:hover {
 }
 
 /* Aplicamos la animación a los contenedores principales */
-.navbar,
-.hero-section,
-section,
-footer {
+.navbar {
   animation: slideDown 0.7s ease-out forwards;
   opacity: 0; /* Estado inicial invisible, la animación lo dejará en 1 */
 }
@@ -102,62 +32,6 @@ footer {
 .navbar {
   animation-delay: 0.1s;
 }
-.hero-section {
-  animation-delay: 0.2s;
-}
-section:nth-of-type(1) {
-  animation-delay: 0.3s;
-}
-section:nth-of-type(2) {
-  animation-delay: 0.4s;
-}
-section:nth-of-type(3) {
-  animation-delay: 0.5s;
-}
-section:nth-of-type(4) {
-  animation-delay: 0.6s;
-}
-section:nth-of-type(5) {
-  animation-delay: 0.7s;
-}
-footer {
-  animation-delay: 0.8s;
-}
-
-/* Opcional: las cards también pueden animarse individualmente para un efecto más granular */
-.card {
-  animation: slideDown 0.5s ease-out forwards;
-  opacity: 0;
-}
-/* Retraso escalonado para las cards */
-.card:nth-child(1) { animation-delay: 0.4s; }
-.card:nth-child(2) { animation-delay: 0.5s; }
-.card:nth-child(3) { animation-delay: 0.6s; }
-.card:nth-child(4) { animation-delay: 0.7s; }
-
-/* También las preguntas del FAQ */
-.accordion-item {
-  animation: slideDown 0.5s ease-out forwards;
-  opacity: 0;
-}
-.accordion-item:nth-child(1) { animation-delay: 0.7s; }
-.accordion-item:nth-child(2) { animation-delay: 0.8s; }
-.accordion-item:nth-child(3) { animation-delay: 0.9s; }
-.accordion-item:nth-child(4) { animation-delay: 1.0s; }
-
-/* Evita scroll horizontal inesperado */
-html, body {
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-/* Imágenes del logo fluidas */
-.cachIcon img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 
 /* Forzar comportamiento responsive en pantallas pequeñas */
 @media (max-width: 991.98px) {
@@ -215,117 +89,10 @@ html, body {
   }
 }
 
-/* Evita que elementos anchos rompan el layout */
-img, .bg-light, .card, .container {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-
-/* ===== EFECTO HOVER PARA TARJETAS (SOLO CONTENEDOR) ===== */
-.card {
-  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), 
-              box-shadow 0.3s ease, 
-              border-color 0.2s ease !important;
-  position: relative;
-  border: 1px solid transparent !important;
-  will-change: transform, box-shadow;
-
-  &:hover {
-    transform: translateY(-8px) !important;
-    box-shadow: 0 20px 25px -8px rgba(0, 0, 0, 0.15) !important;
-    border-color: rgba(13, 110, 253, 0.2) !important;
-    background-color: white !important;
-  }
-}
-
-/* ===== EFECTO HOVER PARA ETAPAS EDUCATIVAS (TRES COLUMNAS) ===== */
-.row.g-4 > .col-md-4 > [class*="p-4"].bg-light.rounded-4,
-.row.g-4 > .col-md-4 > [class*="p-4"].bg-white.rounded-4 {
-  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), 
-              box-shadow 0.3s ease, 
-              border-color 0.2s ease !important;
-  position: relative;
-  border: 1px solid transparent !important;
-  will-change: transform, box-shadow;
-
-  &:hover {
-    transform: translateY(-8px) !important;
-    box-shadow: 0 20px 25px -8px rgba(0, 0, 0, 0.15) !important;
-    border-color: rgba(13, 110, 253, 0.2) !important;
-    background-color: white !important;
-  }
-}
-
-/* Ajuste específico para las tarjetas de etapas que tienen bg-light */
-.row.g-4 > .col-md-4 > .bg-light.rounded-4:hover {
-  background-color: white !important; /* Fondo blanco al hacer hover */
-}
-
-/* Ajuste específico para las mini cards (ya son bg-white, no cambian fondo) */
-.row.g-4 > .col-md-4 > .bg-white.rounded-4:hover {
-  background-color: white !important; /* Se mantiene blanco, pero forzamos por consistencia */
-}
-
-/* ===== ICONO DE CICLO MINIMALISTA ===== */
-.icon-cycle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  .material-symbols-outlined {
-    font-size: 1.5em;      /* Mismo tamaño que el display-4 */
-    color: #DE2F31;        /* Azul Bootstrap suave */
-    animation: rotate 20s infinite linear;  /* Giro muy lento y constante */
-    opacity: 0.9;
-  }
-}
-
 @keyframes rotate {
   from { transform: rotate(360deg); }
   to { transform: rotate(0deg); }
 }
-
-/* ===== ICONO DE USUARIO MINIMALISTA ===== */
-.icon-user {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .material-symbols-outlined {
-    font-size: 1.5em;      /* Igual que el display-4 */
-    color: #DE2F31;        /* Azul Bootstrap coherente */
-    opacity: 0.9;
-  }
-}
-
-/* ===== ESTRELLA DE 4 PUNTAS (estilizada) ===== */
-.icon-four-star {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .material-symbols-outlined {
-    font-size: 1.5em;
-    color: #DE2F31;
-    transform: rotate(0deg);  /* El rombo girado simula una estrella de 4 puntas */
-    opacity: 0.9;
-  }
-}
-
-.icon-comment {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .material-symbols-outlined {
-    font-size: 1.5em;
-    color: #DE2F31;
-    transform: rotate(0deg);  /* El rombo girado simula una estrella de 4 puntas */
-    opacity: 0.9;
-  }
-}
-
 /* ===== BOTONES PERSONALIZADOS (CUADRADOS Y ROJOS) ===== */
 .btn-custom {
   background-color: #de2f31 !important;
@@ -343,5 +110,95 @@ img, .bg-light, .card, .container {
 
   .icon {
     font-size: 1.25rem;
+  }
+}
+
+
+/* ===== NAVBAR STICKY Y EFECTO SCROLL ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  /* Versión reducida al hacer scroll */
+  &.navbar-scrolled {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* sombra sutil */
+
+    /* Reducir tamaño de los logos */
+    .cachIcon img {
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+
+    .cachIcon:first-child img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .cachIcon:last-child img {
+      width: 156px;
+      height: 48px;
+    }
+
+    /* Botones más compactos */
+    .btn-custom {
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Opcional: reducir separación entre elementos */
+    .navbar-nav .nav-link {
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-scrolled {
+    .cachIcon:first-child img {
+      width: 40px;
+      height: 40px;
+    }
+    .cachIcon:last-child img {
+      width: 120px;
+      height: 40px;
+    }
+  }
+}
+
+/* ===== AJUSTE FINO PARA BOTONES ===== */
+.btn-custom.btn-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;            /* Consistente con Bootstrap */
+  padding: 0.5rem 1rem;        /* Forzar mismo padding que btn-lg */
+  font-size: 1.25rem;          /* Tamaño de fuente de btn-lg */
+
+  .btn-icon {
+    width: auto;
+    height: 1.2em;             /* Escala relativa al tamaño de fuente */
+    max-height: 24px;           /* Límite para que no crezca demasiado */
+    vertical-align: middle;
+  }
+}
+
+
+// Ajuste para móvil
+@media (max-width: 576px) {
+  .scroll-top-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+
+    .material-symbols-outlined {
+      font-size: 24px;
+    }
   }
 }

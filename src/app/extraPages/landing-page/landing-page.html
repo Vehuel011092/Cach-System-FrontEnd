@@ -1,0 +1,328 @@
+<!-- Hero Section -->
+<section class="hero-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold mb-4">
+          Educando con libertad,<br />sensibilidad y visión global.
+        </h1>
+        <p class="lead text-secondary mb-4">
+          Una educación que forma personas íntegras y conscientes del mundo que las rodea.
+        </p>
+        <a
+          href="#"
+          class="btn btn-primary btn-lg rounded-pill px-5 py-3"
+          style="background-color: #de2f31; color: white; border: none"
+          >Admisiones</a
+        >
+      </div>
+      <div class="col-lg-6">
+        <!-- Placeholder visual: puedes reemplazar por una imagen real -->
+        <div class="groupStaffImage">
+          <img src="assets/groupStaffImage.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visión Empresarial -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <h2 class="fw-bold mb-4">Enfoque con Visión Empresarial</h2>
+        <p class="lead text-secondary">
+          En CACH impulsamos una educación que va más allá del aula, fomentando el pensamiento
+          estratégico, la toma de decisiones y el liderazgo desde etapas tempranas. Nuestro enfoque
+          con visión empresarial prepara a los estudiantes para identificar oportunidades, resolver
+          problemas de forma innovadora y actuar con responsabilidad en un entorno competitivo y
+          globalizado. Formamos jóvenes con mentalidad emprendedora, capaces de liderar proyectos,
+          adaptarse al cambio y construir su propio camino hacia el éxito.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 Pilares (Cards) -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <div class="display-4 mb-3 icon-cycle">
+              <span class="material-symbols-outlined">sync</span>
+            </div>
+            <h5 class="card-title fw-bold">Aprendizaje trilingüe</h5>
+            <p class="card-text text-secondary">
+              Clases en español, inglés y alemán desde preescolar hasta preparatoria, con
+              certificaciones internacionales y enfoque intercultural.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <div class="display-4 mb-3 icon-user">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <h5 class="card-title fw-bold">Atención personalizada</h5>
+            <p class="card-text text-secondary">
+              Seguimiento académico y emocional individualizado, promoviendo el crecimiento integral
+              y el bienestar de cada alumno.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <div class="display-4 mb-3 icon-four-star">
+              <span class="material-symbols-outlined">star</span>
+            </div>
+            <h5 class="card-title fw-bold">Programas innovadores</h5>
+            <p class="card-text text-secondary">
+              Laboratorios de idiomas, robótica, tecnología educativa y talleres de emprendimiento
+              para potenciar habilidades del siglo XXI.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <div class="display-4 mb-3 icon-comment">
+              <span class="material-symbols-outlined">comment</span>
+            </div>
+            <h5 class="card-title fw-bold">Campus seguro y moderno</h5>
+            <p class="card-text text-secondary">
+              Instalaciones seguras y equipadas: aulas, laboratorios, áreas deportivas y espacios
+              culturales para una experiencia completa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Etapas educativas (tres columnas) -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Un modelo educativo integral, para cada etapa de la vida</h2>
+      <p class="lead text-secondary">
+        En CACH, acompañamos a nuestros estudiantes desde sus primeros pasos hasta la consolidación
+        de su identidad profesional y humana.
+      </p>
+    </div>
+    <div class="row g-4">
+      <!-- Tarjeta 1: Escuela para Niños -->
+      <div class="col-md-4">
+        <div class="p-4 bg-light rounded-4 h-100 d-flex flex-column">
+          <!--Image from public/assets/stockImages/kidImage1.jpg-->
+          <div class="mb-4 overflow-hidden rounded-4" style="height: 200px">
+            <img
+              src="assets/stockImages/kidImage1.jpg"
+              alt="Escuela para Niños"
+              class="w-100 h-100 object-fit-cover"
+            />
+          </div>
+          <h4 class="fw-bold">Escuela para Niños</h4>
+          <p class="text-secondary">
+            Desde maternal hasta primaria, ofrecemos un entorno seguro, libre y estimulante, donde
+            niñas y niños aprenden a conocerse, expresarse y convivir.
+          </p>
+          <button
+            class="btn btn-custom align-self-center mt-auto px-4 py-2 rounded-3"
+            (click)="irAEscuelaNinos()"
+          >
+            <span class="icon material-symbols-outlined me-1">arrow_forward</span>
+            Explorar
+          </button>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2: Escuela para Jóvenes -->
+      <div class="col-md-4">
+        <div class="p-4 bg-light rounded-4 h-100 d-flex flex-column">
+          <div class="mb-4 overflow-hidden rounded-4" style="height: 200px">
+            <img
+              src="assets/stockImages/graduated1.jpg"
+              alt="Escuela para jovenes"
+              class="w-100 h-100 object-fit-cover"
+            />
+          </div>
+          <h4 class="fw-bold">Escuela para Jóvenes</h4>
+          <p class="text-secondary">
+            En secundaria y preparatoria, trabajamos con un enfoque en el pensamiento crítico, la
+            vida en sociedad y el desarrollo profesional.
+          </p>
+          <button
+            class="btn btn-custom align-self-center mt-auto px-4 py-2 rounded-3"
+            (click)="irAEscuelaJovenes()"
+          >
+            <span class="icon material-symbols-outlined me-1">arrow_forward</span>
+            Explorar
+          </button>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3: Departamento de Lenguas -->
+      <div class="col-md-4">
+        <div class="p-4 bg-light rounded-4 h-100 d-flex flex-column">
+          <div class="mb-4 overflow-hidden rounded-4" style="height: 200px">
+            <img
+              src="assets/stockImages/lenguage1.png"
+              alt="Escuela para jovenes"
+              class="w-100 h-100 object-fit-cover"
+            />
+          </div>
+          <h4 class="fw-bold">Departamento de Lenguas</h4>
+          <p class="text-secondary">
+            A través del español, inglés y alemán, cultivamos la comunicación global y el
+            pensamiento intercultural.
+          </p>
+          <button
+            class="btn btn-custom align-self-center mt-auto px-4 py-2 rounded-3"
+            (click)="irADepartamentoLenguas()"
+          >
+            <span class="icon material-symbols-outlined me-1">arrow_forward</span>Explorar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Niveles educativos (mini cards) -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="border-0 bg-white p-4 rounded-4">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-2">Preescolar</span>
+          <h5 class="fw-bold">Aprendizaje temprano y multilingüe</h5>
+          <p class="text-secondary">
+            Desde los 3 años, los niños inician inglés y alemán, desarrollando habilidades
+            emocionales, cognitivas y motoras.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="border-0 bg-white p-4 rounded-4">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-2">Primaria</span>
+          <h5 class="fw-bold">Excelencia académica y valores</h5>
+          <p class="text-secondary">
+            Fortalecemos tres idiomas, pensamiento crítico y formación integral con actividades
+            deportivas, culturales y tecnológicas.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="border-0 bg-white p-4 rounded-4">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-2"
+            >Secundaria y preparatoria</span
+          >
+          <h5 class="fw-bold">Formación internacional y humanista</h5>
+          <p class="text-secondary">
+            Preparamos para retos universitarios y profesionales, con certificaciones
+            internacionales y oportunidades de intercambio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Respuestas claras para familias</h2>
+      <p class="lead text-secondary">
+        Resuelve tus dudas sobre admisiones, programas y nuestro enfoque educativo.
+      </p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item border-0 border-bottom">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button bg-transparent shadow-none fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq1"
+              >
+                ¿Cómo es el proceso de admisión?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">
+                Comienza con una solicitud en línea, seguida de entrevista y evaluación. Nuestro
+                equipo te acompaña y responde tus preguntas en cada etapa.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 border-bottom">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-transparent shadow-none fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq2"
+              >
+                ¿Qué idiomas se enseñan aquí?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">
+                Impartimos español, inglés y alemán desde preescolar. Ofrecemos certificaciones
+                internacionales en ambos idiomas extranjeros.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 border-bottom">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-transparent shadow-none fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq3"
+              >
+                ¿Qué hace único su modelo educativo?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">
+                Ofrecemos atención personalizada, formación académica sólida y desarrollo en
+                valores. Fomentamos pensamiento crítico e interculturalidad.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-transparent shadow-none fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq4"
+              >
+                ¿Desde qué edad se puede ingresar?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">
+                La admisión está disponible desde los 18 meses en maternal.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

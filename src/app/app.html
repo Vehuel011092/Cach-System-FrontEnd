@@ -1,5 +1,8 @@
 <!-- Navbar (Bootstrap) -->
-<nav class="navbar navbar-expand-lg bg-white py-3 border-bottom">
+<nav
+  class="navbar navbar-expand-lg bg-white py-3 border-bottom"
+  [class.navbar-scrolled]="isScrolled"
+>
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
       <div class="d-flex align-items-center gap-2" (click)="reload()">
@@ -24,339 +27,44 @@
         <li class="nav-item"><app-drop-down-menu></app-drop-down-menu></li>
         <li class="nav-item"><a class="nav-link" href="#" (click)="reload()">Modelos</a></li>
         <li class="nav-item"><a class="nav-link" href="#" (click)="reload()">Contacto</a></li>
-        <li class="nav-item ms-lg-3">
-          <a class="btn btn-custom btn-lg me-3" (click)="reload()"> Admisiones </a>
+        <li class="nav-item ms-lg-2">
+          <!-- Admisiones -->
+          <a class="btn btn-custom btn-lg rounded-3 me-3 px-4 py-2" (click)="reload()">
+            Admisiones
+          </a>
 
+          <!-- WhatsApp con icono ajustado -->
           <a
-            class="btn btn-custom rounded-3 btn-lg"
-            href="https://api.whatsapp.com/send/?phone=526642228729&text&type=phone_number&app_absent=0"
+            class="btn btn-custom btn-lg rounded-3 px-4 py-2"
+            href="https://api.whatsapp.com/send/?phone=526642228729..."
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span class="icon me-1">
-              <img src="assets/icons/whatsAppIcon.png" width="28" height="28" alt="WhatsApp" />
-            </span>
+            <img
+              src="assets/icons/whatsAppIcon.png"
+              width="22"
+              height="22"
+              class="me-2"
+              alt="WhatsApp"
+            />
             WhatsApp
           </a>
         </li>
       </ul>
     </div>
   </div>
+  @if (isNotLanding()) {
+  <button
+  class="btn btn-danger rounded-circle back-to-top-btn position-fixed"
+  (click)="scrollToTop()"
+  [class.show]="isScrolled"
+>
+   <span class="material-symbols-outlined">arrow_back</span>
+</button>
+  }
 </nav>
-
-<!-- Hero Section -->
-<section class="hero-section py-5">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h1 class="display-4 fw-bold mb-4">
-          Educando con libertad,<br />sensibilidad y visión global.
-        </h1>
-        <p class="lead text-secondary mb-4">
-          Una educación que forma personas íntegras y conscientes del mundo que las rodea.
-        </p>
-        <a
-          href="#"
-          class="btn btn-primary btn-lg rounded-pill px-5 py-3"
-          style="background-color: #de2f31; color: white; border: none"
-          >Admisiones</a
-        >
-      </div>
-      <div class="col-lg-6">
-        <!-- Placeholder visual: puedes reemplazar por una imagen real -->
-        <div class="groupStaffImage">
-          <img src="assets/groupStaffImage.png" />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Visión Empresarial -->
-<section class="py-5 bg-white">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10 text-center">
-        <h2 class="fw-bold mb-4">Enfoque con Visión Empresarial</h2>
-        <p class="lead text-secondary">
-          En CACH impulsamos una educación que va más allá del aula, fomentando el pensamiento
-          estratégico, la toma de decisiones y el liderazgo desde etapas tempranas. Nuestro enfoque
-          con visión empresarial prepara a los estudiantes para identificar oportunidades, resolver
-          problemas de forma innovadora y actuar con responsabilidad en un entorno competitivo y
-          globalizado. Formamos jóvenes con mentalidad emprendedora, capaces de liderar proyectos,
-          adaptarse al cambio y construir su propio camino hacia el éxito.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4 Pilares (Cards) -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm">
-          <div class="card-body">
-            <div class="display-4 mb-3 icon-cycle">
-              <span class="material-symbols-outlined">sync</span>
-            </div>
-            <h5 class="card-title fw-bold">Aprendizaje trilingüe</h5>
-            <p class="card-text text-secondary">
-              Clases en español, inglés y alemán desde preescolar hasta preparatoria, con
-              certificaciones internacionales y enfoque intercultural.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm">
-          <div class="card-body">
-            <div class="display-4 mb-3 icon-user">
-              <span class="material-symbols-outlined">person</span>
-            </div>
-            <h5 class="card-title fw-bold">Atención personalizada</h5>
-            <p class="card-text text-secondary">
-              Seguimiento académico y emocional individualizado, promoviendo el crecimiento integral
-              y el bienestar de cada alumno.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm">
-          <div class="card-body">
-            <div class="display-4 mb-3 icon-four-star">
-              <span class="material-symbols-outlined">star</span>
-            </div>
-            <h5 class="card-title fw-bold">Programas innovadores</h5>
-            <p class="card-text text-secondary">
-              Laboratorios de idiomas, robótica, tecnología educativa y talleres de emprendimiento
-              para potenciar habilidades del siglo XXI.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm">
-          <div class="card-body">
-            <div class="display-4 mb-3 icon-comment">
-              <span class="material-symbols-outlined">comment</span>
-            </div>
-            <h5 class="card-title fw-bold">Campus seguro y moderno</h5>
-            <p class="card-text text-secondary">
-              Instalaciones seguras y equipadas: aulas, laboratorios, áreas deportivas y espacios
-              culturales para una experiencia completa.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Etapas educativas (tres columnas) -->
-<section class="py-5 bg-white">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Un modelo educativo integral, para cada etapa de la vida</h2>
-      <p class="lead text-secondary">
-        En CACH, acompañamos a nuestros estudiantes desde sus primeros pasos hasta la consolidación
-        de su identidad profesional y humana.
-      </p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="p-4 bg-light rounded-4 h-100">
-          <div class="display-3 mb-3">🧒</div>
-          <h4 class="fw-bold">Escuela para Niños</h4>
-          <p class="text-secondary">
-            Desde maternal hasta primaria, ofrecemos un entorno seguro, libre y estimulante, donde
-            niñas y niños aprenden a conocerse, expresarse y convivir.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="p-4 bg-light rounded-4 h-100">
-          <div class="display-3 mb-3">🎓</div>
-          <h4 class="fw-bold">Escuela para Jóvenes</h4>
-          <p class="text-secondary">
-            En secundaria y preparatoria, trabajamos con un enfoque en el pensamiento crítico, la
-            vida en sociedad y el desarrollo profesional.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="p-4 bg-light rounded-4 h-100">
-          <div class="display-3 mb-3">🌍</div>
-          <h4 class="fw-bold">Departamento de Lenguas</h4>
-          <p class="text-secondary">
-            A través del español, inglés y alemán, cultivamos la comunicación global y el
-            pensamiento intercultural.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Niveles educativos (mini cards) -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="border-0 bg-white p-4 rounded-4">
-          <span class="badge bg-primary bg-opacity-10 text-primary mb-2">Preescolar</span>
-          <h5 class="fw-bold">Aprendizaje temprano y multilingüe</h5>
-          <p class="text-secondary">
-            Desde los 3 años, los niños inician inglés y alemán, desarrollando habilidades
-            emocionales, cognitivas y motoras.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="border-0 bg-white p-4 rounded-4">
-          <span class="badge bg-primary bg-opacity-10 text-primary mb-2">Primaria</span>
-          <h5 class="fw-bold">Excelencia académica y valores</h5>
-          <p class="text-secondary">
-            Fortalecemos tres idiomas, pensamiento crítico y formación integral con actividades
-            deportivas, culturales y tecnológicas.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="border-0 bg-white p-4 rounded-4">
-          <span class="badge bg-primary bg-opacity-10 text-primary mb-2"
-            >Secundaria y preparatoria</span
-          >
-          <h5 class="fw-bold">Formación internacional y humanista</h5>
-          <p class="text-secondary">
-            Preparamos para retos universitarios y profesionales, con certificaciones
-            internacionales y oportunidades de intercambio.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ Section -->
-<section class="py-5 bg-white">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Respuestas claras para familias</h2>
-      <p class="lead text-secondary">
-        Resuelve tus dudas sobre admisiones, programas y nuestro enfoque educativo.
-      </p>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="accordion" id="faqAccordion">
-          <div class="accordion-item border-0 border-bottom">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button bg-transparent shadow-none fw-bold"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#faq1"
-              >
-                ¿Cómo es el proceso de admisión?
-              </button>
-            </h2>
-            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-secondary">
-                Comienza con una solicitud en línea, seguida de entrevista y evaluación. Nuestro
-                equipo te acompaña y responde tus preguntas en cada etapa.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item border-0 border-bottom">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed bg-transparent shadow-none fw-bold"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#faq2"
-              >
-                ¿Qué idiomas se enseñan aquí?
-              </button>
-            </h2>
-            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-secondary">
-                Impartimos español, inglés y alemán desde preescolar. Ofrecemos certificaciones
-                internacionales en ambos idiomas extranjeros.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item border-0 border-bottom">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed bg-transparent shadow-none fw-bold"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#faq3"
-              >
-                ¿Qué hace único su modelo educativo?
-              </button>
-            </h2>
-            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-secondary">
-                Ofrecemos atención personalizada, formación académica sólida y desarrollo en
-                valores. Fomentamos pensamiento crítico e interculturalidad.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item border-0">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed bg-transparent shadow-none fw-bold"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#faq4"
-              >
-                ¿Desde qué edad se puede ingresar?
-              </button>
-            </h2>
-            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-secondary">
-                La admisión está disponible desde los 18 meses en maternal.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Contenido principal -->
+<router-outlet />
 
 <!-- Footer -->
-<footer class="bg-dark text-white py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h4 class="fw-bold">CACH</h4>
-        <p class="text-white-50">Educando con libertad, sensibilidad y visión global.</p>
-      </div>
-      <div class="col-md-3">
-        <h6 class="fw-bold">Enlaces</h6>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-white-50 text-decoration-none">Admisiones</a></li>
-          <li><a href="#" class="text-white-50 text-decoration-none">Modelo educativo</a></li>
-          <li><a href="#" class="text-white-50 text-decoration-none">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <h6 class="fw-bold">Legal</h6>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-white-50 text-decoration-none">Aviso de privacidad</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col-12 text-center text-white-50">
-        <small>Excelencia trilingüe, futuro sin límites</small>
-      </div>
-    </div>
-  </div>
-</footer>
-<router-outlet />
+<app-footer-page></app-footer-page>
