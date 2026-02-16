@@ -10,8 +10,8 @@
 </button>
 
 <ng-template
-   [cdkConnectedOverlayOpen]="trigger.expanded()"
-  [cdkConnectedOverlay]="{origin, usePopover: 'inline'}"
+  [cdkConnectedOverlayOpen]="trigger.expanded()"
+  [cdkConnectedOverlay]="{ origin, usePopover: 'inline' }"
   [cdkConnectedOverlayPositions]="overlayPositions"
   [cdkConnectedOverlayViewportMargin]="isMobile() ? 12 : 8"
   [cdkConnectedOverlayPush]="true"
@@ -61,19 +61,19 @@
         </div>
 
         <!-- Columna 3: DEPARTAMENTO DE LENGUAS -->
-        <div class="column" style="display: flex; flex-direction: column;">
+        <div class="column" style="display: flex; flex-direction: column">
           <h3 class="column-title">DEPARTAMENTO DE LENGUAS</h3>
-          <button ngMenuItem value="Certificación Inglés" class="menu-link" style="display: flex;">
+          <button ngMenuItem value="Certificación Inglés" class="menu-link" style="display: flex">
             <span class="icon material-symbols-outlined">folder</span>
             <span class="label">Certificación Inglés</span>
             <span class="description">Oxford TCC</span>
           </button>
-          <button ngMenuItem value="Certificación Alemán" class="menu-link" style="display: flex;">
+          <button ngMenuItem value="Certificación Alemán" class="menu-link" style="display: flex">
             <span class="icon material-symbols-outlined">folder</span>
             <span class="label">Certificación Alemán</span>
             <span class="description">Goethe Institut</span>
           </button>
-          <button ngMenuItem value="Certificación Español" class="menu-link" style="display: flex;">
+          <button ngMenuItem value="Certificación Español" class="menu-link" style="display: flex">
             <span class="icon material-symbols-outlined">folder</span>
             <span class="label">Certificación Español</span>
             <span class="description">Instituto Cervantes</span>
@@ -82,9 +82,11 @@
 
         <!-- Panel Oscuro -->
         <div class="info-panel">
-          <h2 class="panel-title" style="color: white;">Educación<br>trilingüe e integral</h2>
+          <h2 class="panel-title" style="color: white">Educación<br />trilingüe e integral</h2>
           <p class="panel-subtitle">Líderes con visión y valores.</p>
-          <button class="panel-button">Admisiones <span class="arrow">→</span></button>
+          <button class="panel-button" (mousedown)="irAAdmisiones()">
+            Admisiones <span class="arrow">→</span>
+          </button>
         </div>
       </div>
     </ng-template>

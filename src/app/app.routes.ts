@@ -4,12 +4,13 @@ import { LandingPage } from './extraPages/landing-page/landing-page'; // Asegúr
 import { EscuelaParaNinos } from './extraPages/escuela-para-ninos/escuela-para-ninos';
 import { EscuelaParaJovenes } from './extraPages/escuela-para-jovenes/escuela-para-jovenes';
 import { DepartamentoDeLenguas } from './extraPages/departamento-de-lenguas/departamento-de-lenguas';
-
+import { Admisiones } from './extraPages/admisiones/admisiones';
 
 export const routes: Routes = [
   { path: 'escuela-para-ninos', component: EscuelaParaNinos },
   { path: 'escuela-para-jovenes', component: EscuelaParaJovenes },
   { path: 'departamento-de-lenguas', component: DepartamentoDeLenguas },
+  { path: 'admisiones', component: Admisiones },
   { path: '', component: LandingPage, pathMatch: 'full' }, // importante: pathMatch full
   { path: '**', redirectTo: '' } // redirige rutas no encontradas a inicio
 ];

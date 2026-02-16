@@ -27,13 +27,10 @@
         <li class="nav-item"><app-drop-down-menu></app-drop-down-menu></li>
         <li class="nav-item"><a class="nav-link" href="#" (click)="reload()">Modelos</a></li>
         <li class="nav-item"><a class="nav-link" href="#" (click)="reload()">Contacto</a></li>
-        <li class="nav-item ms-lg-2">
+        <li class="nav-item ms-lg-2 d-flex flex-column flex-lg-row gap-2 align-items-lg-center">
           <!-- Admisiones -->
-          <a class="btn btn-custom btn-lg rounded-3 me-3 px-4 py-2" (click)="reload()">
-            Admisiones
-          </a>
-
-          <!-- WhatsApp con icono ajustado -->
+          <a class="btn btn-custom btn-lg rounded-3 px-4 py-2" (click)="reload()"> Admisiones </a>
+          <!-- WhatsApp -->
           <a
             class="btn btn-custom btn-lg rounded-3 px-4 py-2"
             href="https://api.whatsapp.com/send/?phone=526642228729..."
@@ -54,13 +51,13 @@
     </div>
   </div>
   @if (isNotLanding()) {
-  <button
-  class="btn btn-danger rounded-circle back-to-top-btn position-fixed"
-  (click)="scrollToTop()"
-  [class.show]="isScrolled"
->
-   <span class="material-symbols-outlined">arrow_back</span>
-</button>
+    <button
+      class="btn btn-danger rounded-circle back-to-top-btn position-fixed"
+      (click)="scrollToTop()"
+      [class.show]="isScrolled"
+    >
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
   }
 </nav>
 <!-- Contenido principal -->

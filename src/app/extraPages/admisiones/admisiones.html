@@ -1,0 +1,94 @@
+<!-- Contenedor principal con espaciado superior para compensar la navbar sticky -->
+<div class="container py-5 mt-5">
+  <!-- Encabezado -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-lg-8 text-center">
+      <h1 class="display-4 fw-bold mb-4">Forma parte de la comunidad CACH</h1>
+      <p class="lead text-secondary">
+        Estamos listos para acompañarte en el proceso de admisión. Resolvemos tus dudas, agendamos tu visita y te guiamos paso a paso para que tu hijo(a) inicie su formación en un entorno seguro, trilingüe y con excelencia académica.
+      </p>
+      <!-- Botón de llamada a la acción (opcional) -->
+      <a href="#formulario" class="btn btn-custom btn-lg rounded-3 px-5 py-3 mt-3" style="color: white;">
+        Contáctanos
+      </a>
+    </div>
+  </div>
+
+  <!-- Grid de contacto: información + formulario -->
+  <div class="row g-5">
+    <!-- Columna izquierda: información de contacto -->
+    <div class="col-md-5">
+      <div class="bg-light rounded-4 p-4 p-lg-5 h-100">
+        <h2 class="fw-bold mb-4">Comunícate con nuestro equipo</h2>
+        <p class="text-secondary mb-4">
+          Estamos disponibles para resolver tus dudas.
+        </p>
+
+        <!-- Correo electrónico -->
+        <div class="d-flex align-items-start gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary fs-1">mail</span>
+          <div>
+            <h5 class="fw-bold mb-1">Correo electrónico</h5>
+            <p class="text-secondary mb-0">
+              <a href="mailto:admisiones@cach.edu.mx" class="text-decoration-none">admisiones@cach.edu.mx</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="d-flex align-items-start gap-3">
+          <span class="material-symbols-outlined text-primary fs-1">call</span>
+          <div>
+            <h5 class="fw-bold mb-1">Teléfono</h5>
+            <p class="text-secondary mb-1">Lunes a viernes, 8:00 a 15:00 hrs.</p>
+            <p class="text-secondary mb-0">
+              <a href="tel:+526644496900" class="text-decoration-none">+52 (664) 449 6900</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: formulario de contacto -->
+    <div class="panelFormulario col-md-7" id="formulario">
+      <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm">
+        <h2 class="fw-bold mb-4">Envíanos un mensaje</h2>
+
+        <!-- Mensajes de éxito/error (ocultos por defecto) -->
+        <div class="alert alert-success d-none" role="alert" id="successMessage">
+          Gracias, hemos recibido tu información y nos pondremos en contacto contigo a la brevedad.
+        </div>
+        <div class="alert alert-danger d-none" role="alert" id="errorMessage">
+          Ooops, algo salió mal con el envío.
+        </div>
+
+        <!-- Formulario (puedes agregar lógica con ReactiveForms o ngModel) -->
+        <form (ngSubmit)="enviarFormulario()">
+          <div class="mb-3">
+            <label for="nombre" class="form-label fw-semibold">Nombre completo</label>
+            <input type="text" class="form-control form-control-lg rounded-3" id="nombre" name="nombre" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold">Correo electrónico</label>
+            <input type="email" class="form-control form-control-lg rounded-3" id="email" name="email" required email>
+          </div>
+
+          <div class="mb-3">
+            <label for="telefono" class="form-label fw-semibold">Teléfono (opcional)</label>
+            <input type="tel" class="form-control form-control-lg rounded-3" id="telefono" name="telefono">
+          </div>
+
+          <div class="mb-4">
+            <label for="mensaje" class="form-label fw-semibold">Mensaje</label>
+            <textarea class="form-control form-control-lg rounded-3" id="mensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-custom btn-lg rounded-3 px-5 py-3 w-100 " style="color: white;">
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

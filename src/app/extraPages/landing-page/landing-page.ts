@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Navegacion } from './../../services/navegacion';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 })
 
 export class LandingPage {
-  constructor(private router: Router) { }
+  constructor(private router: Router, public navegacion: Navegacion) { }
+  
 
   irAEscuelaNinos() {
     // Aquí puedes agregar lógica adicional si es necesario
@@ -22,6 +24,10 @@ export class LandingPage {
 
   irADepartamentoLenguas() {
     this.router.navigate(['/departamento-de-lenguas']);
+  }
+
+   irAAdmisiones() {
+    this.router.navigate(['/admisiones']);
   }
 
 

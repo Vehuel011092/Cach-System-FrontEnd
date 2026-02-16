@@ -1,10 +1,11 @@
 import { Component, inject, viewChild } from '@angular/core';
-import {Menu, MenuContent, MenuItem, MenuTrigger} from '@angular/aria/menu';
-import {OverlayModule} from '@angular/cdk/overlay'
+import { Menu, MenuContent, MenuItem, MenuTrigger } from '@angular/aria/menu';
+import { OverlayModule } from '@angular/cdk/overlay'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { ConnectedPosition } from '@angular/cdk/overlay';
+import { Navegacion } from './../../services/navegacion';
 
 
 @Component({
@@ -14,11 +15,17 @@ import { ConnectedPosition } from '@angular/cdk/overlay';
   styleUrl: './drop-down-menu.scss',
 })
 export class DropDownMenu {
+  constructor(public navegacion: Navegacion) { }
+
   formatMenu = viewChild<Menu<string>>('formatMenu');
   categorizeMenu = viewChild<Menu<string>>('categorizeMenu');
+  mainMenu = viewChild<Menu<string>>('mainMenu');
+  private breakpointObserver = inject(BreakpointObserver);
 
-    private breakpointObserver = inject(BreakpointObserver);
-  
+ irAAdmisiones() {
+  this.mainMenu()?.close();
+  this.navegacion.irAAdmisiones();
+}
   isMobile = toSignal(
     this.breakpointObserver
       .observe([Breakpoints.HandsetPortrait, Breakpoints.TabletPortrait])

@@ -42,4 +42,6 @@ export class App {
     this.router.navigate(['/landing-page']);
   }
 
+  
+
 }
