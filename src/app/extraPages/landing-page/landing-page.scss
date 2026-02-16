@@ -321,3 +321,51 @@ img, .bg-light, .card, .container {
     vertical-align: middle;
   }
 }
+
+/* Hero section con video de fondo */
+.hero-section {
+  position: relative;
+  min-height: 600px; /* Ajusta según necesites */
+  background-color: #000; /* Fondo de respaldo mientras carga el video */
+}
+
+.hero-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* El video cubre todo el contenedor sin deformarse */
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad (más oscuro = más contraste) */
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+/* Ajuste de color para el texto y el lead */
+.hero-section h1 {
+  color: white;
+}
+
+.hero-section .lead {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Opcional: si quieres que la imagen del equipo se vea más clara sobre el overlay */
+.groupStaffImage img {
+  filter: brightness(1.1);
+  border-radius: 8px; /* si quieres bordes redondeados */
+}

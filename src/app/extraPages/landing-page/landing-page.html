@@ -1,25 +1,35 @@
-<!-- Hero Section -->
-<section class="hero-section py-5">
-  <div class="container">
+<!-- Hero Section con video de fondo -->
+<section class="hero-section py-5 position-relative overflow-hidden">
+  <!-- Video de fondo -->
+  <video class="hero-video-background" autoplay muted loop playsinline>
+    <source src="assets/videos/hero-background.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta de video.
+  </video>
+
+  <!-- Overlay oscuro para mejorar contraste del texto -->
+  <div class="hero-overlay"></div>
+
+  <div class="container position-relative" style="z-index: 2;">
     <div class="row align-items-center">
       <div class="col-lg-6">
-        <h1 class="display-4 fw-bold mb-4">
+        <h1 class="display-4 fw-bold mb-4 text-white">
           Educando con libertad,<br />sensibilidad y visión global.
         </h1>
-        <p class="lead text-secondary mb-4">
+        <p class="lead text-white-50 mb-4">
           Una educación que forma personas íntegras y conscientes del mundo que las rodea.
         </p>
         <a
           class="btn btn-primary btn-lg rounded-pill px-5 py-3"
           style="background-color: #de2f31; color: white; border: none"
           (click)="navegacion.irAAdmisiones()"
-          >Admisiones</a
         >
+          Admisiones
+        </a>
       </div>
       <div class="col-lg-6">
-        <!-- Placeholder visual: puedes reemplazar por una imagen real -->
+        <!-- Imagen del equipo (ajusta según tu asset) -->
         <div class="groupStaffImage">
-          <img src="assets/groupStaffImage.png" />
+          <img src="assets/groupStaffImage.png" class="img-fluid" alt="Equipo CACH" />
         </div>
       </div>
     </div>
