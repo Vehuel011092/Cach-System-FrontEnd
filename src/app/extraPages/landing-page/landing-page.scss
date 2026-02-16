@@ -26,14 +26,6 @@ h2 {
   font-weight: 700;
 }
 
-/* Botones */
-.btn-primary {
-  background-color: #0d6efd;
-  border: none;
-  padding: 0.75rem 2rem;
-  font-weight: 500;
-}
-
 .btn-outline-primary {
   border-width: 2px;
 }
@@ -368,4 +360,13 @@ img, .bg-light, .card, .container {
 .groupStaffImage img {
   filter: brightness(1.1);
   border-radius: 8px; /* si quieres bordes redondeados */
+}
+
+.admition-button:hover {
+  background-color: color.scale(#de2f31, $lightness: -10%) !important;
+}
+
+
+.admition-button:hover .btn-icon {
+  filter: brightness(0.9);
 }
